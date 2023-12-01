@@ -18,8 +18,8 @@ function App() {
      <NavBarr/>
      
      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/' element={<Login/>}/>
+        <Route path='/home' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/Product' element={<Products/>}>
         <Route index element={<ProductsList/>}/>
