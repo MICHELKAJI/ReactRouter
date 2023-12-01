@@ -1,11 +1,32 @@
-
+import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
+import Home from './pages/home';
+import Login from './pages/login';
+import About from './pages/about';
+import ProductsList from './pages/productList';
+import ProductPreview from './components/productPreview';
+import SingleProduct from './pages/singleProduct';
+import Products from './pages/Product';
+ 
 import './App.css'
+import NavBarr from './components/navBarre';
 
 function App() {
  
   return (
     <>
-     <h1>Hello Future</h1>
+     <BrowserRouter>
+     <NavBarr/>
+     
+     <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/Product' element={<Products/>}>
+        <Route index element={<ProductsList/>}/>
+        <Route path =':id' element={<SingleProduct/>}/>
+        </Route>
+      </Routes>
+     </BrowserRouter>
     </>
   )
 }
